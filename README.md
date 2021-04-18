@@ -20,7 +20,7 @@
   ❓ This is a Social Network API backend. This can be connected to a Front End or tested through a program such as Insomnia.
 
   ### Link to Walkthrough Video:
-  > - [:movie_camera: Click Here for an external video link.](https://drive.google.com/file/d/1Z7pRX48OOCl4rLAsdxGaXBOqXjVnroVZ/view)
+  > - [:movie_camera: Click Here for an external video link.](https://drive.google.com/file/d/1U9UzNU0LhWcUbHT3RAEhazmLA8L-ehoP/view)
   > - [:movie_camera: Click Here for the downloaded MP4 video saved locally.](./src/demo-MP4.mp4)
   > - [:movie_camera: Click Here for the downloaded webm video saved locally.](./src/demo-webm.webm)
 
