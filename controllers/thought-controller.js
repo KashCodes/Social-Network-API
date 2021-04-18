@@ -18,7 +18,7 @@ const thoughtController = {
     Thought.findOne({ _id: params.thoughtId })
       .then(dbThoughtData => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: 'GET OUTTA MY HEAD CHARLES!! That id cannot be found!' });
+          res.status(404).json({ message: 'Incorrect thought ID.' });
           return;
         }
         res.json(dbThoughtData);
@@ -42,7 +42,7 @@ const thoughtController = {
       })
       .then(dbUserData => {
         if (!dbUserData) {
-          res.status(404).json({ message: 'Joke is on you, you need a different id!' });
+          res.status(404).json({ message: 'Could not add thought.' });
           return;
         }
         res.json(dbUserData);
@@ -55,7 +55,7 @@ const thoughtController = {
     Thought.findOneAndUpdate({ _id: params.thoughtId }, body, { new: true, runValidators: true })
       .then(dbThoughtData => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: '::taps skull:: Nope, no thought, also no id that matches.' });
+          res.status(404).json({ message: 'Could not update thought.' });
           return;
         }
         res.json(dbThoughtData);
@@ -68,7 +68,7 @@ const thoughtController = {
     Thought.findOneAndDelete({ _id: params.thoughtId })
       .then(deletedThought => {
         if (!deletedThought) {
-          return res.status(404).json({ message: 'That id is not correct, the internet never forgets!' });
+          return res.status(404).json({ message: 'Incorrect ID' });
         }
         return User.findOneAndUpdate(
           { _id: params.userId },
@@ -78,7 +78,7 @@ const thoughtController = {
       })
       .then(dbUserData => {
         if (!dbUserData) {
-          res.status(404).json({ message: 'I may not remember why I came here, but I do remember who they are because that is not the correct id.' });
+          res.status(404).json({ message: 'Incorrect ID. ' });
           return;
         }
         res.json(dbUserData);
@@ -95,7 +95,7 @@ const thoughtController = {
     )
       .then(dbThoughtData => {
         if (!dbThoughtData) {
-          return res.status(404).json({ message: 'They cannot clutch their pearls if the id does not match.' });
+          return res.status(404).json({ message: 'Incorrect thought ID.' });
         }
         res.json(dbThoughtData);
       })

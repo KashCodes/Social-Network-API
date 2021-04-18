@@ -7,7 +7,7 @@ const apiRoutes = require('./api');
 router.use('/api', apiRoutes);
 
 router.use((req, res) => {
-    res.status(404).send("<img src='https://media.giphy.com/media/3ohzdQ1IynzclJldUQ/source.gif'>")
+    res.status(404).send("404 Not Found.")
 });
 
 module.exports = router;

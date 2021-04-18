@@ -56,13 +56,13 @@ const userController = {
     User.findOneAndDelete({ _id: params.id })
       .then(dbUserData => {
         if (!dbUserData) {
-          return res.status(404).json({ message: 'You have chosen.. poorly. ::you turn to dust::' });
+          return res.status(404).json({ message: 'Incorrect Username' });
         }
 
         // bonus: return Thought.deleteMany({ _id: { $in: dbUserData.thoughts } })
       })
       .then(() => {
-        res.json({ message: 'BYE FELICIA!!!' });
+        res.json({ message: 'This User has been deleted.' });
       })
       .catch(err => res.status(400).json(err));
   },
@@ -85,7 +85,7 @@ const userController = {
     User.findOneAndUpdate({ _id: params.id }, { $pull: { friends: params.friendId } }, { runValidators: true })
       .then(dbUserData => {
         if (!dbUserData) {
-          res.status(404).json({ message: 'Soo, that person is not here with that id!' });
+          res.status(404).json({ message: 'Friend deleted.' });
           return;
         }
         res.json(dbUserData);
